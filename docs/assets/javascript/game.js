@@ -2,15 +2,13 @@ let playerName = window.prompt("What is your robot's name?");
 let playerHealth = 100;
 let playerAttack = 10;
 let playerMoney = 10;
-
+let enemies = ["Roborto", "Amy Android", "Robo Trumble"];
 // You can also log multiple values at once like this
-console.log(playerName, playerAttack, playerHealth);
 
-let enemyName = "Roborto";
 let enemyHealth = 50;
 let enemyAttack = 12;
 
-const fight = function () {// if player choses to fight, then fight
+const fight = function (enemyName) {// if player choses to fight, then fight
     if (promptFight.toLowerCase() === "fight") {
         enemyHealth -= playerAttack;
         console.log(`Enemy lost ${playerAttack} health. Now at ${enemyHealth}`);
@@ -39,4 +37,6 @@ const fight = function () {// if player choses to fight, then fight
     }
 };
 
-fight();
+for(const enemy in enemies) {
+    fight(enemy);
+}
